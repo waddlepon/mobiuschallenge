@@ -1,4 +1,3 @@
-import { InsertEmoticonRounded } from '@material-ui/icons';
 import axios from 'axios';
 import axiosRetry from 'axios-retry';
 

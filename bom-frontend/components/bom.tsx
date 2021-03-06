@@ -1,6 +1,7 @@
 import { BomItem, getBomItems, addBomItem, deleteBomItem, putBomItem } from '../lib/bomapi';
 import React, { useState } from 'react';
 import Paper from '@material-ui/core/Paper';
+import Typography from '@material-ui/core/Typography';
 import { DataTypeProvider, EditingState } from '@devexpress/dx-react-grid';
 import { Grid, Table, TableHeaderRow, TableEditRow, TableEditColumn } from '@devexpress/dx-react-grid-material-ui';
 
@@ -49,7 +50,7 @@ export default function Bom({ id, bom_items }: { id: string, bom_items: BomItem[
     }
     return (
         <div className="container">
-            <h1>BOM: {id}</h1>
+            <Typography component="h1">BOM: {id}</Typography>
             <Paper>
                 <Grid
                     rows = {rows}
