@@ -34,8 +34,8 @@ export default function Home({
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
-    let boms_list = await Promise.all((await getBoms()).map(async bom => {
-      let items = await getBomItems(bom.id);
+    const boms_list = await Promise.all((await getBoms()).map(async bom => {
+      const items = await getBomItems(bom.id);
       return { id: bom.id, bom_items: items };
     }));
     return { 

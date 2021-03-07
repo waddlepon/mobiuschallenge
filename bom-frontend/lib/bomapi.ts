@@ -40,7 +40,7 @@ export async function getBomItems(id: number) {
     }
 }
 
-export async function addBomItem(bomid: number, item) {
+export async function addBomItem(bomid: number, item: any) {
     try {
         await axios.post(api_url + '/bom/' + bomid.toString() + '/bomitem', item);
     } catch (error) {
@@ -56,8 +56,8 @@ export async function deleteBomItem(bomid: number, itemid: number) {
     }
 }
 
-export async function putBomItem(bomid: number, itemid: number, item) {
-    let dateTime = new Date();
+export async function putBomItem(bomid: number, itemid: number, item: any) {
+    const dateTime = new Date();
     item.updated_at = (Math.floor(dateTime.getTime() / 1000)).toString();
     try {
         await axios.put(api_url + '/bom/' + bomid.toString() + '/bomitem/' + itemid.toString(), item);
